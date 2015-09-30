@@ -21,6 +21,7 @@ use strict;
 use warnings;
 use JSON qw( decode_json );
 # UPDATE - Add debug
+# WORK - Fix or modify this capability 
 #use Data::Dumper; # Debug
 ###########################################################################
 #
@@ -56,7 +57,7 @@ my $transitionDir = "tmp/";
 # The maximum number of CSV lines per file to ingest
 my $fileCount = 5000;
 
-# Grab from config? Static coded for now.
+# WORK - Grab from config? Static coded for now.
 my @fileTypes = ( 'ufwallow', 'ufwblock' );
 
 ########################################
@@ -326,10 +327,13 @@ sub processRawData
 #   print "RAW Column: [$tmp]\n";
 #}
 
+# WORK - make sure the model column format is correct per row, otherwise reject row
+# make sure to have output with the rejection and why
+
          my $csvLine = "";
          for my $column ( @columns )
          {
-            my $newColumn = "";
+            my $newColumn = '';
 
             # If the raw column is more than 1 defined column
             # seperate the RAW column into the real column
@@ -355,11 +359,18 @@ sub processRawData
 # For debug only
 #print "New Column: [" . $newColumn . "]\n";
 
-            # UPDATE - These need to be automated tmp solution
+            # WORK - These need to be automated tmp solution
             # '"' is the default encapsulation of columns character
             # '__SPACE__' is the default replacement value for spaces 
-            $newColumn =~ s/"//g;
-            $newColumn =~ s/__SPACE__/ /g;
+            if ( $newColumn )
+            {
+               $newColumn =~ s/"//g;
+               $newColumn =~ s/__SPACE__/ /g;
+            }
+            else
+            {
+               $newColumn = '';
+            }
 
             # Check for the last column
             if ( $columns[$#columns] eq $column )
