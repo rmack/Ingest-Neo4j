@@ -137,6 +137,9 @@ a "1" to an integer. All values ingested are ingested as strings.
 * **properties** - An array of properties which need to match the RAW data log column names
 * **ColumnName** - Any property name that you would like to change to another name
 
+##### Column Key Values
+* Info will be updated soon, see model/ufwallow.model.json example 
+
 ### Run  
 To run you will need to do the following  
 
