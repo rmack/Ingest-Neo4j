@@ -4,7 +4,7 @@
       [
          {
             "alias":      "a",
-            "labels":     [ "ufw","udp" ],
+            "labels":     [ "allow","udp" ],
             "duplicates": "no",
             "properties":
                [
@@ -16,6 +16,7 @@
                            }
                         ]
                   },
+                  "Hostname",
                   "Date",
                   "Uptime",
                   "Event",
@@ -32,7 +33,7 @@
                ]
          },
          {
-            "alias":      "d",
+            "alias":      "b",
             "labels":     [ "source" ],
             "duplicates": "no",
             "SourceIP":   "IP",
@@ -42,9 +43,9 @@
                ]
          },
          {
-            "alias":         "e",
-            "labels":        [ "dest" ],
-            "duplicates":    "no",
+            "alias":       "c",
+            "labels":      [ "dest" ],
+            "duplicates":  "no",
             "DestIP": "IP",
             "properties":
                [
@@ -55,10 +56,10 @@
    "relationships":
       [
          {
-            "alias":      "i",
+            "alias":      "d",
             "label":      "CONNECTED_WITH",
             "duplicates": "no",
-            "from":       "d",
+            "from":       "b",
             "to":         "a",
             "properties":
                [
@@ -66,11 +67,11 @@
                ]
          },
          {
-            "alias":      "j",
+            "alias":      "e",
             "label":      "CONNECTED_TO",
             "duplicates": "no",
-            "from":       "f",
-            "to":         "a",
+            "from":       "a",
+            "to":         "c",
             "properties":
                [
                   "Date"

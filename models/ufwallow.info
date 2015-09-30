@@ -1,24 +1,24 @@
-0-space  -   NODE ufw,udp    a   Date            - The date assocaited with the action 
-1-space  0-: NODE hostinfo   f   Hostname        - The name of the host 
+0-space  -   NODE ufw,allow  a   Date            - The date assocaited with the action 
+1-space  0-: NODE ufw,allow  a   Hostname        - The name of the host 
 2-space  -   --   kernel:
-3-space  -   NODE ufw,udp    a   Uptime          - The time is seconds since boot 
-4-space  -   NODE ufw,udp    a   Event           - The UFW logged event 
-5-space  1-= NODE ufw,udp    a   IN              - Network interface data came in on 
-6-space  1-= NODE ufw,udp    a   OUT             - Network infterface data went out on 
-7-space  1-= NODE source     d   SourceIP        - The source IP address (SRC)
-8-space  1-= NODE dest       e   DestIP          - The destination IP address (DST) 
-9-space  1-= NODE ufw,udp    a   Length          - The length of the packet (LEN)
-10-space 1-= NODE ufw,udp    a   TOS             - Type of service 
-11-space 1-= NODE ufw,udp    a   PREC            - Precedence
-12-space 1-= NODE ufw,udp    a   TTL             - Time to live 
-13-space 1-= NODE ufw,udp    a   ID              - ID? 
-14-space -   NODE ufw,udp    a   DF              - DF? 
-15-space 1-= NODE ufw,udp    a   Protocol        - The protocol used UDP, TCP, etc... (PROTO)
-16-space 1-= NODE ufw,udp    a   SourcePort      - The Source Port
-17-space 1-= NODE ufw,udp    a   DestPort        - The destination Port
+3-space  -   NODE ufw,allow  a   Uptime          - The time is seconds since boot 
+4-space  -   NODE ufw,allow  a   Event           - The UFW logged event 
+5-space  1-= NODE ufw,allow  a   IN              - Network interface data came in on 
+6-space  1-= NODE ufw,allow  a   OUT             - Network infterface data went out on 
+7-space  1-= NODE source     b   SourceIP        - The source IP address (SRC)
+8-space  1-= NODE dest       c   DestIP          - The destination IP address (DST) 
+9-space  1-= NODE ufw,allow  a   Length          - The length of the packet (LEN)
+10-space 1-= NODE ufw,allow  a   TOS             - Type of service 
+11-space 1-= NODE ufw,allow  a   PREC            - Precedence
+12-space 1-= NODE ufw,allow  a   TTL             - Time to live 
+13-space 1-= NODE ufw,allow  a   ID              - ID? 
+14-space -   NODE ufw,allow  a   DF              - DF? 
+15-space 1-= NODE ufw,allow  a   Protocol        - The protocol used UDP, TCP, etc... (PROTO)
+16-space 1-= NODE ufw,allow  a   SourcePort      - The Source Port
+17-space 1-= NODE ufw,allow  a   DestPort        - The destination Port
 
-RELATIONSHIP CONNECTED_WITH i (source) d (ufw)       a Date
-RELATIONSHIP CONNECTED_TO   j (ufw)    f (dest)      a Date
+RELATIONSHIP CONNECTED_WITH d (source) b (ufw)  a Date
+RELATIONSHIP CONNECTED_TO   e (ufw)    a (dest) c Date
 
 Example:
 "Sep 20 07:41:39" Server kernel: "2222878.289862" "UFW ALLOW" IN= OUT=eth0 SRC=192.168.1.28 DST=192.168.1.255 LEN=258 TOS=0x00 PREC=0x00 TTL=64 ID=61182 DF PROTO=UDP SPT=138 DPT=138 
