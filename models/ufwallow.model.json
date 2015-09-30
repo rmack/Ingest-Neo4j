@@ -116,75 +116,75 @@
               "index":     1
            },
            {
-              "name":     "OUT",
+              "name":     "SourceIP",
               "position": 7,
               "raw":      7,
               "seperator": "=",
               "index":     1
            },
            {
-              "name":     "OUT",
+              "name":     "DestIP",
               "position": 8,
               "raw":      8,
               "seperator": "=",
               "index":     1
            },
            {
-              "name":     "OUT",
+              "name":     "Length",
               "position": 9,
               "raw":      9,
               "seperator": "=",
               "index":     1
            },
            {
-              "name":     "OUT",
+              "name":     "TOS",
               "position": 10,
               "raw":      10,
               "seperator": "=",
               "index":     1
            },
            {
-              "name":     "OUT",
+              "name":     "PREC",
               "position": 11,
               "raw":      11,
               "seperator": "=",
               "index":     1
            },
            {
-              "name":     "OUT",
+              "name":     "TTL",
               "position": 12,
               "raw":      12,
               "seperator": "=",
               "index":     1
            },
            {
-              "name":     "OUT",
+              "name":     "ID",
               "position": 13,
               "raw":      13,
               "seperator": "=",
               "index":     1
            },
            {
-              "name":     "OUT",
+              "name":     "DF",
               "position": 14,
               "raw":      14
            },
            {
-              "name":     "OUT",
+              "name":     "Protocol",
               "position": 15,
               "raw":      15,
               "seperator": "=",
               "index":     1
            },
            {
-              "name":     "OUT",
+              "name":     "SourcePort",
               "position": 16,
               "raw":      16,
               "seperator": "=",
               "index":     1
            },
            {
-              "name":     "OUT",
+              "name":     "DestPort",
               "position": 17,
               "raw":      17,
               "seperator": "=",
