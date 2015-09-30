@@ -1,0 +1,194 @@
+{
+   "model": "ufwallow",
+   "nodes":
+      [
+         {
+            "alias":      "a",
+            "labels":     [ "ufw","udp" ],
+            "duplicates": "no",
+            "properties":
+               [
+                  {
+                     "static":
+                        [
+                           {
+                              "Label":  "ALLOW"
+                           }
+                        ]
+                  },
+                  "Date",
+                  "Uptime",
+                  "Event",
+                  "IN",
+                  "OUT",
+                  "Length",
+                  "TOS",
+                  "PREC",
+                  "TTL",
+                  "ID",
+                  "Protocol",
+                  "SourcePort",
+                  "DestPort"
+               ]
+         },
+         {
+            "alias":      "d",
+            "labels":     [ "source" ],
+            "duplicates": "no",
+            "SourceIP":   "IP",
+            "properties":
+               [
+                  "SourceIP"
+               ]
+         },
+         {
+            "alias":         "e",
+            "labels":        [ "dest" ],
+            "duplicates":    "no",
+            "DestIP": "IP",
+            "properties":
+               [
+                  "DestIP"
+               ]
+         }
+      ],
+   "relationships":
+      [
+         {
+            "alias":      "i",
+            "label":      "CONNECTED_WITH",
+            "duplicates": "no",
+            "from":       "d",
+            "to":         "a",
+            "properties":
+               [
+                  "Date"
+               ]
+         },
+         {
+            "alias":      "j",
+            "label":      "CONNECTED_TO",
+            "duplicates": "no",
+            "from":       "f",
+            "to":         "a",
+            "properties":
+               [
+                  "Date"
+               ]
+         }
+      ],
+   "primarySeperator": "space",
+   "encapsulator":     "quotes",
+   "columns":
+      [
+           {
+              "name":     "Date",
+              "position": 1,
+              "raw":      0
+           },
+           {
+              "name":      "Hostname",
+              "position":  2,
+              "raw":       1
+           },
+           {
+              "name":     "Uptime",
+              "position": 3,
+              "raw":      3
+           },
+           {
+              "name":     "Event",
+              "position": 4,
+              "raw":      3
+           },
+           {
+              "name":     "IN",
+              "position": 5,
+              "raw":      5,
+              "seperator": "=",
+              "index":     1
+           },
+           {
+              "name":     "OUT",
+              "position": 6,
+              "raw":      6,
+              "seperator": "=",
+              "index":     1
+           },
+           {
+              "name":     "OUT",
+              "position": 7,
+              "raw":      7,
+              "seperator": "=",
+              "index":     1
+           },
+           {
+              "name":     "OUT",
+              "position": 8,
+              "raw":      8,
+              "seperator": "=",
+              "index":     1
+           },
+           {
+              "name":     "OUT",
+              "position": 9,
+              "raw":      9,
+              "seperator": "=",
+              "index":     1
+           },
+           {
+              "name":     "OUT",
+              "position": 10,
+              "raw":      10,
+              "seperator": "=",
+              "index":     1
+           },
+           {
+              "name":     "OUT",
+              "position": 11,
+              "raw":      11,
+              "seperator": "=",
+              "index":     1
+           },
+           {
+              "name":     "OUT",
+              "position": 12,
+              "raw":      12,
+              "seperator": "=",
+              "index":     1
+           },
+           {
+              "name":     "OUT",
+              "position": 13,
+              "raw":      13,
+              "seperator": "=",
+              "index":     1
+           },
+           {
+              "name":     "OUT",
+              "position": 14,
+              "raw":      14
+           },
+           {
+              "name":     "OUT",
+              "position": 15,
+              "raw":      15,
+              "seperator": "=",
+              "index":     1
+           },
+           {
+              "name":     "OUT",
+              "position": 16,
+              "raw":      16,
+              "seperator": "=",
+              "index":     1
+           },
+           {
+              "name":     "OUT",
+              "position": 17,
+              "raw":      17,
+              "seperator": "=",
+              "index":     1
+           }
+      ]
+}
